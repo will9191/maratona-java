@@ -1,24 +1,22 @@
-package academy.devdojo.maratonajava.javacore.sobrecargametodos.domain;
+package academy.devdojo.maratonajava.javacore.constructors.domain;
 
 public class Anime {
     private String name;
     private String type;
     private int episodes;
     private String genre;
+    private String studio;
 
-    public Anime() {
-
-    }
-
-    public void init(String name, String type, int episodes) {
+    public Anime(String name, String type, int episodes, String genre) {
         this.name = name;
         this.type = type;
         this.episodes = episodes;
+        this.genre = genre;
     }
 
-    public void init(String name, String type, int episodes, String genre) {
-        this.init(name, type, episodes);
-        this.genre = genre;
+    public Anime(String name, String type, int episodes, String genre, String studio) {
+        this(name, type, episodes, genre);
+        this.studio = studio;
     }
 
     public void setName(String name) {
@@ -58,5 +56,6 @@ public class Anime {
         System.out.println(this.type);
         System.out.println(this.episodes);
         System.out.println(this.genre);
+        System.out.println(this.studio);
     }
 }
